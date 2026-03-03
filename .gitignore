@@ -1,0 +1,13 @@
+corpus/
+corpus_*/
+core/build/
+index.bin
+index_*.bin
+*.o
+*.pdf
+__pycache__/
+*.pyc
+*.pyo
+analysis/stats.json
+analysis/token_freq.tsv
+.DS_Store

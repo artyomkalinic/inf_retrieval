@@ -1,0 +1,25 @@
+db:
+  host: localhost
+  port: 27017
+  name: oncology_corpus
+
+logic:
+  delay: 0.05
+  max_concurrent: 20
+  max_pages: 35000
+  user_agent: "OncologySearchBot/1.0 (University Project)"
+
+sources:
+  - name: pubmed_central
+    seed_urls:
+      - "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=oncology+OR+cancer&retmax=500&retstart=0"
+    base_url: "https://www.ncbi.nlm.nih.gov/pmc/articles/"
+    url_pattern: "ncbi.nlm.nih.gov/pmc/articles/PMC"
+    target_count: 25000
+
+  - name: clinicaltrials
+    seed_urls:
+      - "https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&pageSize=100"
+    base_url: "https://clinicaltrials.gov/study/"
+    url_pattern: "clinicaltrials.gov/study/NCT"
+    target_count: 7000

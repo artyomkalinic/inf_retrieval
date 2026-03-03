@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oncology Search Engine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #ffffff;
+            color: #202124;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 640px;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 300;
+            color: #1a73e8;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #5f6368;
+            margin-bottom: 36px;
+            font-weight: 400;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 6px 8px 6px 20px;
+            background: #fff;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+            transition: box-shadow 0.2s;
+        }
+
+        .search-box:hover,
+        .search-box:focus-within {
+            box-shadow: 0 2px 8px rgba(32, 33, 36, 0.16);
+            border-color: #c0c4c9;
+        }
+
+        .search-box input[type="text"] {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 8px 0;
+            color: #202124;
+            background: transparent;
+        }
+
+        .search-box input[type="text"]::placeholder {
+            color: #9aa0a6;
+        }
+
+        .search-box button {
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .search-box button:hover {
+            background: #1557b0;
+        }
+
+        .hints {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #70757a;
+            line-height: 1.7;
+        }
+
+        .hints code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">Oncology Search</h1>
+        <p class="subtitle">Search across 32,000+ oncology research articles</p>
+        <form action="/search" method="get">
+            <div class="search-box">
+                <input type="text" name="q" placeholder="Enter search query..." autofocus autocomplete="off">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        <div class="hints">
+            Boolean operators: <code>&&</code> (AND), <code>||</code> (OR), <code>!</code> (NOT), parentheses <code>( )</code><br>
+            Example: <code>(breast || lung) cancer !benign</code>
+        </div>
+    </div>
+</body>
+</html>
