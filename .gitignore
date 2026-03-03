@@ -4,7 +4,6 @@ core/build/
 index.bin
 index_*.bin
 *.o
-*.pdf
 __pycache__/
 *.pyc
 *.pyo
